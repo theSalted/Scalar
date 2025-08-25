@@ -1,0 +1,10 @@
+prefix=/Users/yuhaochen/Developer/Scalar
+exec_prefix=${prefix}
+libdir=${prefix}/build
+includedir=${prefix}/include
+
+Name: ScalarEngine
+Description: Scalar Game Engine C++ Library
+Version: 1.0.0
+Libs: -L${libdir} -lEngine -L${libdir}/vcpkg_installed/arm64-osx/lib -lSDL3 -lflecs_static -lGameNetworkingSockets -lbgfx -lbimg -lbx -lBulletDynamics -lBulletCollision -lLinearMath -framework Cocoa -framework IOKit -framework CoreFoundation -framework Carbon
+Cflags: -I${includedir} -I${prefix}/build/vcpkg_installed/arm64-osx/include

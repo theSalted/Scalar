@@ -1,0 +1,4 @@
+module ScalarEngine {
+    header "../../include/EngineC.h"
+    export *
+}

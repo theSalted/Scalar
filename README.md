@@ -1,39 +1,48 @@
 # Scalar
 
-Game engine with C++ core and Swift frontend.
+A Swift game engine with high-performance C++ core libraries.
+
+## Overview
+
+Scalar is a modern game engine built primarily in Swift, leveraging powerful C++ libraries for performance-critical systems like physics, networking, and rendering.
 
 ## Setup
 
-```bash
-# First time setup
-cmake --preset macos-arm64-debug
+### Prerequisites
+- macOS 13+
+- Swift 5.9+
+- CMake (for building C++ engine core)
 
-# Build
-cmake --build build/macos-arm64-debug
-
-# Code sign (required on macOS)
-codesign --force --deep --sign - build/macos-arm64-debug/GameCpp.app
-```
-
-## Run
+### Building the C++ Engine Core
 
 ```bash
-# Run with debug output (recommended for development)
-build/macos-arm64-debug/GameCpp.app/Contents/MacOS/GameCpp
-
-# Or Swift version
-build/macos-arm64-debug/GameSwift.app/Contents/MacOS/GameSwift
-
-# Launch as macOS app (no console output)
-open build/macos-arm64-debug/GameCpp.app
-```
-
-## Clean Build
-
-```bash
-rm -rf build/macos-arm64-debug
+# First time setup - build the C++ engine library
 cmake --preset macos-arm64-debug
 cmake --build build/macos-arm64-debug
+```
+
+### Building the Swift Application
+
+```bash
+# Build the Swift executable
+xcrun swift build
+
+# Run the application
+xcrun swift run Scalar
+```
+
+## Development
+
+```bash
+# Run in debug mode
+./.build/debug/Scalar
+
+# Clean build (order matters - C++ core must be built first)
+xcrun swift package clean
+rm -rf build/
+cmake --preset macos-arm64-debug
+cmake --build build/macos-arm64-debug
+xcrun swift build
 ```
 
 ## Dependencies

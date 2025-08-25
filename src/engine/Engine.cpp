@@ -8,11 +8,11 @@ extern "C" int engine_init() {
   std::fprintf(stderr, "Engine: Initializing...\n");
   
   // Skip SDL for now and just return success to test app launch
-  std::fprintf(stderr, "Engine: Initialization complete (SDL skipped for testing)\n");
+  // std::fprintf(stderr, "Engine: Initialization complete (SDL skipped for testing)\n");
   return 0;
   
   // TODO: Re-enable SDL once we resolve initialization issues
-  /*
+  
   if (SDL_Init(SDL_INIT_VIDEO) != 0) {
     std::fprintf(stderr, "SDL_Init failed: %s\n", SDL_GetError());
     return -1;
@@ -24,7 +24,7 @@ extern "C" int engine_init() {
     SDL_Quit();
     return -1;
   }
-  */
+  
 
   // --- TODO(bgfx): next step ---
   // Fetch native window handle from SDL and pass it into bgfx::PlatformData,
@@ -43,11 +43,11 @@ extern "C" int engine_init() {
 extern "C" void engine_shutdown() {
   std::fprintf(stderr, "Engine: Shutting down...\n");
   // TODO: Re-enable SDL cleanup once we resolve initialization issues
-  /*
+  
   if (g_state.window) {
     SDL_DestroyWindow(g_state.window);
     g_state.window = nullptr;
   }
   SDL_Quit();
-  */
+  
 }
