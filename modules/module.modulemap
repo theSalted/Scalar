@@ -1,0 +1,4 @@
+module EngineC [system] {
+  header "../include/EngineC.h"
+  export *
+}

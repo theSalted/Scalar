@@ -1,0 +1,31 @@
+{
+  "version": 6,
+  "configurePresets": [
+    {
+      "name": "macos-arm64-debug",
+      "displayName": "macOS (Apple Silicon) Debug",
+      "generator": "Ninja",
+      "binaryDir": "build/macos-arm64-debug",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_TOOLCHAIN_FILE": "${sourceDir}/external/vcpkg/scripts/buildsystems/vcpkg.cmake",
+        "VCPKG_TARGET_TRIPLET": "arm64-osx"
+      }
+    },
+    {
+      "name": "macos-x64-debug",
+      "displayName": "macOS (Intel) Debug",
+      "generator": "Ninja",
+      "binaryDir": "build/macos-x64-debug",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_TOOLCHAIN_FILE": "${sourceDir}/external/vcpkg/scripts/buildsystems/vcpkg.cmake",
+        "VCPKG_TARGET_TRIPLET": "x64-osx"
+      }
+    }
+  ],
+  "buildPresets": [
+    { "name": "macos-arm64-debug", "configurePreset": "macos-arm64-debug" },
+    { "name": "macos-x64-debug",   "configurePreset": "macos-x64-debug"   }
+  ]
+}

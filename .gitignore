@@ -1,0 +1,50 @@
+# Build directories
+build/
+out/
+cmake-build-*/
+
+# IDE
+.vscode/
+.idea/
+*.xcodeproj
+*.xcworkspace
+.swiftpm/
+.claude/
+
+# macOS
+.DS_Store
+*.dSYM
+
+# Temporary files
+*.swp
+*.swo
+*~
+*.tmp
+
+# Swift
+.build/
+*.swiftmodule
+*.swiftdoc
+
+# C++ objects
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dylib
+*.dll
+
+# Executables
+*.exe
+*.out
+*.app
+
+# vcpkg
+vcpkg_installed/
+
+# Logs
+*.log
+
+# Scripts (keep the wrapper)
+!swift-wrapper.sh

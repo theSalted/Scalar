@@ -1,0 +1,12 @@
+{
+  "name": "scalar",
+  "version-string": "0.0.1",
+  "builtin-baseline": "6ecbbbdf31cba47aafa7cf6189b1e73e10ac61f8",
+  "dependencies": [
+    "sdl3",
+    "bgfx",
+    "flecs",
+    "gamenetworkingsockets",
+    "bullet3"
+  ]
+}
